@@ -1,18 +1,26 @@
 <template>
-  <div>
-    <p>Game Item</p>
-
+  <div class="game-item" v-bind:class="{'is-complete':todo.completed}">
+    <p>
+      <input type="checkbox" v-on:change="markComplete">
+      {{game.title}}
+      <button @click="$emit('del-game', game.id)" class="del">x</button>
+    </p>
   </div>
 </template>
 
 <script>
-export default{
-  name:"GameItem"
+export default {
+  name:"GameItem",
+  props: ["game"],
+  methods: {
+    markComplete() {
+      this.game.completed = !this.game.completed;
+    }
+  }
 }
-
 </script>
 
-<style scope>
+<style scoped>
   .game-item {
     background: #f4f4f4;
     padding: 10px;

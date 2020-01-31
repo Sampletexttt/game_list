@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Games v-bind:games="games" />
+    <Games v-bind:games="games" v-on:del-game="deleteGame" />
   </div>
 </template>
 
@@ -8,7 +8,7 @@
 import Games from './components/Games';
 
 export default {
-  name: 'app',
+  name: "app",
   components: {
     Games
   },
@@ -31,6 +31,11 @@ export default {
           completed: false
         }
       ]
+    }
+  },
+  methods: {
+    deleteGame(id) {
+      this.games = this.games.filter(game => game.id !== id);
     }
   }
 }
