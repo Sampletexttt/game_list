@@ -1,28 +1,50 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Games />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Games from './components/Games';
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    Games
+  },
+  data() {
+    return{
+      Games: [
+        {
+          id: 1,
+          title: "Game One",
+          completed: false
+        },
+        {
+          id: 2,
+          title: "Game Two",
+          completed: true
+        },
+        {
+          id: 3,
+          title: "Game Three",
+          completed: false
+        }
+      ]
+    }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.4;
 }
 </style>
