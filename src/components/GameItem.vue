@@ -1,5 +1,5 @@
 <template>
-  <div class="game-item" v-bind:class="{'is-complete':todo.completed}">
+  <div class="game-item" v-bind:class="{'is-complete':game.completed}">
     <p>
       <input type="checkbox" v-on:change="markComplete">
       {{game.title}}

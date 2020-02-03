@@ -14,7 +14,7 @@ export default {
   },
   data() {
     return{
-      Games: [
+      games: [
         {
           id: 1,
           title: "Game One",
