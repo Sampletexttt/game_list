@@ -33,9 +33,8 @@ export default {
     }
   },
   created() {
-    axios.get('https://jsonplaceholder.typicode.com/todos')
-    .then(res => this.games = res.data)
-      .catch(err => console.log(err));
+    axios.get('https://jsonplaceholder.typicode.com/todos?_limit=5')
+    .then(res => this.games = res.data);
   }
 }
 </script>
